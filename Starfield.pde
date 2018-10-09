@@ -1,7 +1,7 @@
 //your code here
 void setup()
 {
-	//your code here
+	size(500,500);
 }
 void draw()
 {
@@ -9,18 +9,44 @@ void draw()
 }
 class NormalParticle
 {
-	//your code here
+	double myX, myY, mySpeed, myAngle;
+	int myColor = (int)(Math.random(50, 255));;
+
+	NormalParticle(double x, double y)
+	{
+		myX = x;
+		myY = y;
+	}
+
+	void show()
+	{
+		fill(myColor);
+		ellipse(myX,myY,10,10);
+	}
+	void move()
+	{
+		mySpeed = 0;
+	}
 }
 interface Particle
 {
-	//your code here
+	public void show();
+	public void move();
 }
-class OddballParticle //uses an interface
+class OddballParticle implements Particle//uses an interface
 {
 	//your code here
 }
-class JumboParticle //uses inheritance
+class JumboParticle implements Particle//uses inheritance
 {
-	//your code here
+	public void show()
+	{
+		fill(255);
+		rect(x, y, 25, 25);
+	}
+	public void move()
+	{
+
+	}
 }
 
